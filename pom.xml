@@ -9,7 +9,7 @@
 	</parent>
 
 	<groupId>tech.lapsa.java</groupId>
-	<artifactId>jaxb-commons</artifactId>
+	<artifactId>java-jaxb-commons</artifactId>
 	<version>1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
