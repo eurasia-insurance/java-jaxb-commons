@@ -8,11 +8,15 @@ public class XmlInstantAdapter extends XmlAdapter<String, Instant> {
 
     @Override
     public Instant unmarshal(String v) throws Exception {
+	if (v == null || v.isEmpty())
+	    return null;
 	return Instant.parse(v);
     }
 
     @Override
     public String marshal(Instant v) throws Exception {
+	if (v == null)
+	    return null;
 	return v.toString();
     }
 }
