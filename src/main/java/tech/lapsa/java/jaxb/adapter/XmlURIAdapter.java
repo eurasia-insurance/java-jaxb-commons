@@ -1,18 +1,22 @@
 package tech.lapsa.java.jaxb.adapter;
 
-import java.time.Instant;
+import java.net.URI;
 
 import javax.xml.bind.annotation.adapters.XmlAdapter;
 
-public class XmlURIAdapter extends XmlAdapter<String, Instant> {
+public class XmlURIAdapter extends XmlAdapter<String, URI> {
 
     @Override
-    public Instant unmarshal(String v) throws Exception {
-	return Instant.parse(v);
+    public URI unmarshal(String v) throws Exception {
+	if (v == null || v.isEmpty())
+	    return null;
+	return new URI(v);
     }
 
     @Override
-    public String marshal(Instant v) throws Exception {
+    public String marshal(URI v) throws Exception {
+	if (v == null)
+	    return null;
 	return v.toString();
     }
 }
