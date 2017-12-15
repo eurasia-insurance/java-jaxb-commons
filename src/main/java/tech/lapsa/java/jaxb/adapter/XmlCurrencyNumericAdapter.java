@@ -9,7 +9,7 @@ import tech.lapsa.java.commons.function.MyExceptions;
 public class XmlCurrencyNumericAdapter extends XmlAdapter<String, Currency> {
 
     @Override
-    public Currency unmarshal(String v) throws Exception {
+    public Currency unmarshal(final String v) throws Exception {
 	if (v == null || v.isEmpty())
 	    return null;
 	final int numeric = Integer.parseInt(v);
@@ -17,11 +17,11 @@ public class XmlCurrencyNumericAdapter extends XmlAdapter<String, Currency> {
 		.stream() //
 		.filter(x -> x.getNumericCode() == numeric) //
 		.findAny() //
-		.orElseThrow(MyExceptions.illegalArgumentSupplierFormat("No currency for %1$s", v));
+		.orElseThrow(MyExceptions.illegalArgumentSupplier("No currency for %1$s", v));
     }
 
     @Override
-    public String marshal(Currency v) throws Exception {
+    public String marshal(final Currency v) throws Exception {
 	if (v == null)
 	    return null;
 	return String.valueOf(v.getNumericCode());

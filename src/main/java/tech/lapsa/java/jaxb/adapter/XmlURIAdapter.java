@@ -7,14 +7,14 @@ import javax.xml.bind.annotation.adapters.XmlAdapter;
 public class XmlURIAdapter extends XmlAdapter<String, URI> {
 
     @Override
-    public URI unmarshal(String v) throws Exception {
+    public URI unmarshal(final String v) throws Exception {
 	if (v == null || v.isEmpty())
 	    return null;
 	return new URI(v);
     }
 
     @Override
-    public String marshal(URI v) throws Exception {
+    public String marshal(final URI v) throws Exception {
 	if (v == null)
 	    return null;
 	return v.toString();
