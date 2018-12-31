@@ -48,9 +48,4 @@
 		<tag>HEAD</tag>
 	</scm>
 
-	<issueManagement>
-		<system>gitlab</system>
-		<url>https://gitlab.lapsa.tech/lapsa/java/jaxb-commons/issues</url>
-	</issueManagement>
-
 </project>
